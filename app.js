@@ -88,7 +88,7 @@ async function handleItem(name, channel, server) {
                     channel
                         .fetchMessage(messageId)
                         .then(message => {
-                            message.edit("Could not get details from the Wiki for **" + name + "**");
+                            message.edit("Some guy tried to be clever with: **" + name + "**");
                         })
                         .catch(error => {
                             errorLog.error(`"${error.message}" "${server}" "${name}"`);
