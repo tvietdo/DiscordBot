@@ -30,8 +30,7 @@ var browswer;
 // Rough read file
 var secretSauce = require('fs');
 
-fs.readFile('C:/secretsauce.txt', 'utf8', function(err,contents){
-	console.log(contents);
+secretSauce.readFile('C:/secretsauce.txt', 'utf8', function(err,contents){
 });
 
 client.token = secretSauce;
