@@ -27,7 +27,7 @@ var client = new Discord.Client({
 
 var browswer;
 
-var txtFile = "secretsauce.txt"
+var txtFile = "secretsauce.txt";
 var file = new File(txtFile);
 
 file.open("r");
