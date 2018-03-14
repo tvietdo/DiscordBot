@@ -1,4 +1,5 @@
 {
+    "token": "",
     "wikiURL" : "https://pathofexile.gamepedia.com/",
     "wikiDiv" : ".infobox-page-container > .item-box",
     "wikiInvalidPage" : ".noarticletext",

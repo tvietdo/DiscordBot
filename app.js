@@ -27,13 +27,7 @@ var client = new Discord.Client({
 
 var browswer;
 
-// Rough read file
-var secretSauce = require('fs');
-
-secretSauce.readFile('C:/secretsauce.txt', 'utf8', function(err,contents){
-});
-
-client.token = secretSauce;
+client.token = config.token;
 
 client.login();
 console.log("Logged in");
