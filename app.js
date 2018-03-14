@@ -27,7 +27,18 @@ var client = new Discord.Client({
 
 var browswer;
 
-client.token = config.token;
+var txtFile = "secretsauce.txt"
+var file = new File(txtFile);
+
+file.open("r");
+var secretSauce = "";
+while (!file.eof){
+	str += file.readln() +"\n";
+}
+file.close();
+alert(str);
+
+client.token = str;
 
 client.login();
 console.log("Logged in");
