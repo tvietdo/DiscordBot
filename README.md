@@ -1,6 +1,6 @@
-# PoEWikiBot
+# Discord Bot
 
-A Discord bot for looking up Path of Exile items on the Wiki.  It will post an image of the Item information from the wiki if it's available. Otherwise it will post a direct link to the Wiki Page.
+A fork of the PoeWikiBot which was a fork of another bot. Forking this respository might break things so it is best to fork the original wiki bot from: https://github.com/daleroy1/PoEWikiBot
 
 ## How it works
 
@@ -10,21 +10,12 @@ The bot uses Puppeteer to load the relevant wiki page for the item passed in.  O
 
 This requires Node.js version 7.6+ at a minimum, as it uses async/await calls.
 
-## Configuration
-
-Update the token value in **config.json** with your Discord Bot token.
-
-Run **npm install**
-
-Start the bot with  **node app.js**
 
 ## Support for other wikis
 
 You should be able to edit the **wikiURL** and **wikiDiv** settings in the **config.json** to a different Wiki.
 
 The **wikiDiv** is the CSS selector that the bot will screenshot.
-
-## Known issues
 
 ### Running on Ubunutu
 
