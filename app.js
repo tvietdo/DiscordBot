@@ -27,18 +27,14 @@ var client = new Discord.Client({
 
 var browswer;
 
-var txtFile = "C:/secretsauce.txt";
-var file = new File(txtFile);
+// Rough read file
+var secretSauce = require('fs');
 
-file.open("r");
-var secretSauce = "";
-while (!file.eof){
-	str += file.readln() +"\n";
-}
-file.close();
-alert(str);
+fs.readFile('C:/secretsauce.txt', 'utf8', function(err,contents){
+	console.log(contents);
+});
 
-client.token = str;
+client.token = secretSauce;
 
 client.login();
 console.log("Logged in");
