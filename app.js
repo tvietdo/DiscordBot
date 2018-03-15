@@ -47,6 +47,7 @@ client.on("ready", () => {
     console.log(`Ready as ${client.user.username}`);
 });
 
+//Wiki message checking
 client.on("message", (message) => {
     if (message.author.id == client.user.id) {
         //Disabled this check, as it causes it to not do a check if you post twice in a row.
@@ -64,6 +65,13 @@ client.on("message", (message) => {
     } catch (error) {
         errorLog.error(`"${error.message}"`);
     }
+});
+
+//Meme review message checking
+client.on("message", (message) => {
+	if (message.conent === '*clap clap*'){
+		message.channel.send('MEME REVIEW');
+	}
 });
 
 // Create an event listener for new guild members
