@@ -43,6 +43,7 @@ console.log("Logged in");
 })();
 
 client.on("ready", () => {
+	client.user.setActivity({game: {name: "Certified Idiot"}});
     console.log(`Ready as ${client.user.username}`);
 });
 
