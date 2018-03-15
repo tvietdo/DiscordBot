@@ -68,7 +68,7 @@ client.on("message", (message) => {
 });
 
 //Meme review message checking
-client.on("message", (message) => {
+client.on("message", message => {
 	if (message.conent === 'clap clap'){
 		message.channel.send('MEME REVIEW');
 	}
