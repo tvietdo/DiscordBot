@@ -1,11 +1,21 @@
+// Discord Bot
+// Github located at http://www.github.com/tvietdo/DiscordBot
+// Forked from PoEWikiBot
+
+//Dependencies
 const Discord = require("discord.js");
 const puppeteer = require('puppeteer');
+let Parser = require('rss-parser');
+let parser = new Parser();
+
+
 const wikiRegex = new RegExp("\\[\\[([^\\[\\]]*)\\]\\]", "gu");
 const urlRegex = new RegExp("\\w", "g");
 
 const SimpleNodeLogger = require('simple-node-logger')
 
 
+//Error Logging
 errorLog = SimpleNodeLogger.createSimpleLogger({
     logFilePath: './logs/error.log',
     timestampFormat: 'YYYY-MM-DD HH:mm:ss'
@@ -46,6 +56,17 @@ client.on("ready", () => {
 	client.user.setActivity({game: {name: "Certified Idiot", type: 0}});
     console.log(`Ready as ${client.user.username}`);
 });
+
+//Waiting for the RSS feed
+(async () => {
+    let feed = await parser.parseURL('http://lorem-rss.herokuapp.com/feed');
+    console.log(feed.title);
+
+    feed.items.forEach(item => {
+        console.log(item.title + ':' + item.link)
+
+    });
+})();
 
 //Wiki message checking
 client.on("message", (message) => {
