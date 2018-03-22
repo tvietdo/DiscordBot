@@ -11,6 +11,10 @@
   "dependencies": {
     "discord.js": "^11.0.0",
     "puppeteer": "^1.0.0",
+    "rss-parser": "^3.1.2",
     "simple-node-logger": "^0.93.37"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1"
   }
 }
