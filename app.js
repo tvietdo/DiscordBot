@@ -59,11 +59,16 @@ client.on("ready", () => {
 
 //Waiting for the RSS feed
 (async () => {
-    let feed = await parser.parseURL('http://lorem-rss.herokuapp.com/feed');
+    let feed = await parser.parseURL('http://horriblesubs.info/rss.php?res=1080');
     console.log(feed.title);
 
     feed.items.forEach(item => {
         console.log(item.title + ':' + item.link)
+        client.on("message", message => {
+            if (message.content == 'anime subs'){
+                message.channel.send(item.title + ':' + item.link)
+            }
+        })
 
     });
 })();
