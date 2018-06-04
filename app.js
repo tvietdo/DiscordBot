@@ -5,6 +5,8 @@
 //Dependencies
 const Discord = require("discord.js");
 const puppeteer = require('puppeteer');
+
+//Parser for the RSS feed
 let Parser = require('rss-parser');
 let parser = new Parser();
 
@@ -42,22 +44,10 @@ client.token = config.token;
 client.login();
 console.log("Logged in");
 
-//Setup our browswer
-(async () => {
-    browser = await puppeteer.launch({
-        ignoreHTTPSError: true,
-        headless: true,
-        handleSIGHUP: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
-    });
-})();
-
-client.on("ready", () => {
-	client.user.setActivity({game: {name: "Certified Idiot", type: 0}});
-    console.log(`Ready as ${client.user.username}`);
-});
-
+//My Code
 //Waiting for the RSS feed
+//The purpose of this block of code was to pull RSS news about newly released shows
+//The framework of this was to also pull from twitter
 (async () => {
     let feed = await parser.parseURL('http://horriblesubs.info/rss.php?res=1080');
     console.log(feed.title);
@@ -72,6 +62,30 @@ client.on("ready", () => {
 
     });
 })();
+
+//Meme review message checking
+//Rudimentary call/answer function for practice
+client.on("message", message => {
+	if (message.content === 'clap clap'){
+		message.channel.send('MEME REVIEW');
+	}
+});
+
+//Daleroy1 code
+//Setup our browswer
+(async () => {
+    browser = await puppeteer.launch({
+        ignoreHTTPSError: true,
+        headless: true,
+        handleSIGHUP: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
+    });
+})();
+
+client.on("ready", () => {
+	client.user.setActivity({game: {name: "Certified Idiot", type: 0}});
+    console.log(`Ready as ${client.user.username}`);
+});
 
 //Wiki message checking
 client.on("message", (message) => {
@@ -91,13 +105,6 @@ client.on("message", (message) => {
     } catch (error) {
         errorLog.error(`"${error.message}"`);
     }
-});
-
-//Meme review message checking
-client.on("message", message => {
-	if (message.content === 'clap clap'){
-		message.channel.send('MEME REVIEW');
-	}
 });
 
 // Create an event listener for new guild members
