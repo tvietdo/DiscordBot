@@ -1,6 +1,8 @@
 # Discord Bot
 
-A fork of the PoeWikiBot which was a fork of another bot. Forking this respository might break things so it is best to fork the original wiki bot from: https://github.com/daleroy1/PoEWikiBot
+A fork of the PoeWikiBot which was a fork of another bot. Forking this respository might break things so it is best to fork the original wiki bot from: https://github.com/daleroy1/PoEWikiBot.
+
+The majority of the code is the same and belongs to daleroy1, specifically the PoE wiki screengrabbing functionalities, most of my additions are server specific things and are separate blocks of code that will most likely not work in another person's discord server.
 
 ## How it works
 
