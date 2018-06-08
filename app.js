@@ -49,7 +49,7 @@ console.log("Logged in");
 //The purpose of this block of code was to pull RSS news about newly released shows
 //The framework of this was to also pull from twitter
 (async () => {
-    let feed = await parser.parseURL('http://horriblesubs.info/rss.php?res=1080');
+    let feed = await parser.parseURL('https://www.pathofexile.com/news/rss');
     console.log(feed.title);
 
     feed.items.slice(3).forEach(item => {
